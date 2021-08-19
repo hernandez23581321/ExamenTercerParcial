@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExamenTercerParcial.View"
+             xmlns:pagos="clr-namespace:ExamenTercerParcial.ModelView"
+             x:Class="ExamenTercerParcial.View.ListaPagos">
+
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+
+          
+
+
+            <ListView Margin="0"  RowHeight="200" x:Name="lista" ItemsSource="{Binding Pagos}"  SelectedItem="{Binding SelectedPago}" >
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell >
+                            <ContentView>
+                                <Frame >
+                                    <StackLayout Orientation="Vertical">
+                                      
+
+
+                                        <StackLayout Orientation="Horizontal">
+                                            
+                                            <StackLayout Margin="0" >
+                                                <Frame Margin="0" Padding="0" HeightRequest="130" WidthRequest="100" CornerRadius="10">
+                                                    <Image Margin="0" Aspect="Fill"  Source="{Binding photo_recibo,Converter={StaticResource bisc}}"></Image>
+                                                </Frame>
+                                            </StackLayout>
+                                            <StackLayout Spacing="10" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Orientation="Vertical">
+                                                <Label FontSize="20" FontAttributes="Bold" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span FontSize="20" FontAttributes="Bold" Text="{Binding idPago  } "></Span>
+                                                            <Span FontSize="20" FontAttributes="Bold" Text=". "></Span>
+                                                            <Span Text="{Binding descripcion }"></Span>
+
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+
+                                                </Label>
+                                                <Label >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                          
+                                                            <Span FontSize="16" FontAttributes="Bold" Text="Monto: "></Span>
+                                                            <Span FontSize="16" Text=" L."></Span>
+                                                            <Span  FontSize="16" Text="{Binding monto}"></Span>
+                                                            
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                                <Label >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span FontSize="16" FontAttributes="Bold" Text="Fecha: "></Span>
+                                                            <Span  FontSize="16" Text="{Binding fecha}"></Span>
+                                                           
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            
+                                            </StackLayout>
+
+                                        </StackLayout>
+
+
+
+                                    </StackLayout>
+
+                                </Frame>
+                            </ContentView>
+
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout  HorizontalOptions="FillAndExpand" WidthRequest="230" Margin="20" Orientation="Horizontal">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer CommandParameter="{x:Type local:Pago}" Command="{Binding IrInformacionCommand}">
+
+                    </TapGestureRecognizer>
+
+                </StackLayout.GestureRecognizers>
+                <Frame HorizontalOptions="CenterAndExpand" WidthRequest="230">
+                    <StackLayout HorizontalOptions="Center"  Orientation="Horizontal">
+                        <Label HorizontalOptions="Center" FontSize="20" Text="Ver Pago"></Label>
+
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

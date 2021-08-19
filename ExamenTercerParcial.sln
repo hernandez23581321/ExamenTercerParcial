@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamenTercerParcial.Android", "ExamenTercerParcial\ExamenTercerParcial.Android\ExamenTercerParcial.Android.csproj", "{912BF38F-3547-42AB-A4FE-A8E81B0532ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamenTercerParcial", "ExamenTercerParcial\ExamenTercerParcial\ExamenTercerParcial.csproj", "{47749373-2378-4006-9FCC-4CF71E2897FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{912BF38F-3547-42AB-A4FE-A8E81B0532ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912BF38F-3547-42AB-A4FE-A8E81B0532ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912BF38F-3547-42AB-A4FE-A8E81B0532ED}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{912BF38F-3547-42AB-A4FE-A8E81B0532ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912BF38F-3547-42AB-A4FE-A8E81B0532ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{912BF38F-3547-42AB-A4FE-A8E81B0532ED}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{47749373-2378-4006-9FCC-4CF71E2897FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47749373-2378-4006-9FCC-4CF71E2897FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47749373-2378-4006-9FCC-4CF71E2897FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{47749373-2378-4006-9FCC-4CF71E2897FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47749373-2378-4006-9FCC-4CF71E2897FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47749373-2378-4006-9FCC-4CF71E2897FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF811773-5CEE-48DA-9D3B-6CF0BFABD62B}
+	EndGlobalSection
+EndGlobal

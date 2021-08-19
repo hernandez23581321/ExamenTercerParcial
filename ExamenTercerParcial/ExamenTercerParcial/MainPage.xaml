@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ExamenTercerParcial.ModelView"
+             x:Class="ExamenTercerParcial.MainPage"
+             
+             Title="Registrar Pago Nuevo">
+    <ContentPage.BindingContext>
+        <vm:PagosViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding listaCommand}" IconImageSource="lista.png" Text="Pagos" Priority="0" Order="Primary" >
+
+
+
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+    <StackLayout FlexLayout.AlignSelf="Center">
+   
+        <ScrollView BackgroundColor="White">
+            <Frame Margin="10">
+                <StackLayout Padding="40,40,40,40">
+
+                    <Label  FontSize="Subtitle" Text="Descripcion"></Label>
+                    <Entry  FontAttributes="Bold" TextColor="OrangeRed" Text="{Binding Descripcion,Mode=TwoWay}" ></Entry>
+                    <Label  FontSize="Subtitle" Text="Monto"></Label>
+                    <Entry  FontAttributes="Bold" TextColor="OrangeRed" Text="{Binding Monto,Mode=TwoWay}" Keyboard="Numeric"></Entry>
+                    <Label FontSize="Subtitle" Text="Fecha"></Label>
+                    <DatePicker  FontAttributes="Bold" TextColor="OrangeRed" x:Name="fechaactual"  Date="{Binding Fecha,Mode=TwoWay}" ></DatePicker>
+                    
+                 
+                    <StackLayout IsVisible="{Binding Visible}" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding CameraCommand}">
+
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Frame Padding="0,0"  HorizontalOptions="CenterAndExpand" >
+                            <Image
+                         Aspect="AspectFill"  
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"      
+                        Source="{Binding Camarabtn}"
+                        HeightRequest="{OnPlatform Android=250}"
+                        WidthRequest="{OnPlatform Android=180}"
+                    />
+                        </Frame>
+
+                    </StackLayout>
+                    <Button Margin="10" ImageSource="camera.png" FontFamily="Ubuntu"  Command="{Binding CameraCommand,Mode=TwoWay}"
+                        Text="Recibo "
+                        BackgroundColor="White" BorderWidth="1.0" BorderColor="red"
+                        TextColor="Black" CornerRadius="10" 
+                        FontSize="23" Padding="30,10,30,10"/>
+                    <Button Margin="10" FontFamily="Ubuntu" x:Name="btnSave" Command="{Binding GuardarCommand,Mode=TwoWay}"
+                        Text="Guardar "
+                        BackgroundColor="White" BorderWidth="1.0" BorderColor="red"
+                        TextColor="Black" CornerRadius="10" 
+                        FontSize="23" Padding="30,10,30,10"/>
+
+
+                </StackLayout>
+            </Frame>
+
+        </ScrollView>
+
+
+    </StackLayout>
+
+</ContentPage>

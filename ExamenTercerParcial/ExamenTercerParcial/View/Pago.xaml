@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ExamenTercerParcial.ModelView"
+             x:Class="ExamenTercerParcial.View.Pago"
+             Title="Informacion de pago">
+    <ContentPage.BindingContext>
+        <vm:PagosViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            
+       
+        <StackLayout Padding="20">
+            <Frame Margin="10">
+                <StackLayout>
+                    <Entry IsVisible="false"  Text="{Binding Id}"/>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Descripcion"/>
+                            <Entry  FontAttributes="Bold" TextColor="OrangeRed" Grid.Row="0" Grid.Column="1" Text="{Binding Descripcion}"/>
+
+
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Monto"/>
+                            <Entry  FontAttributes="Bold" TextColor="OrangeRed" Grid.Row="1" Grid.Column="1" Keyboard="Numeric" Text="{Binding Monto}"/>
+
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Fecha"/>
+                            <DatePicker  FontAttributes="Bold" TextColor="OrangeRed" Grid.Row="2" Grid.Column="1" Date="{Binding Fecha}"/>
+
+
+                    </StackLayout>
+                    <StackLayout  >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding CameraCommand}">
+
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Frame Padding="0,0"  HorizontalOptions="CenterAndExpand" >
+                            <Image
+                         Aspect="AspectFill"  
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"      
+                        Source="{Binding Foto,Converter={StaticResource bisc}}"
+                        HeightRequest="{OnPlatform Android=250}"
+                        WidthRequest="{OnPlatform Android=180}"
+                    />
+                        </Frame>
+
+                    </StackLayout>
+                    <Button Margin="10" ImageSource="camera.png" FontFamily="Ubuntu"  Command="{Binding CameraCommand,Mode=TwoWay}"
+                        Text="Recibo "
+                        BackgroundColor="White" BorderWidth="1.0" BorderColor="red"
+                        TextColor="Black" CornerRadius="10" 
+                        FontSize="23" Padding="30,10,30,10"/>
+
+                    <StackLayout Margin="10"  Orientation="Horizontal">
+
+
+                        <Button  BackgroundColor="White" BorderWidth="1.0" BorderColor="red"
+                        TextColor="Black" CornerRadius="10" 
+                        FontSize="23" Padding="30,10,30,10" Text="Delete" Command="{Binding DeleteCommand }"></Button>
+                        <Button  BackgroundColor="White" BorderWidth="1.0" BorderColor="red"
+                        TextColor="Black" CornerRadius="10" 
+                        FontSize="23" Padding="30,10,30,10" Text="Update" Command="{Binding UpdateCommand }"></Button>
+                    </StackLayout>
+                </StackLayout>
+
+
+
+            </Frame>
+
+
+
+
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
