@@ -14,6 +14,7 @@ namespace ExamenTercerParcial.ModelView
     public class ListaPagosViewModel : BaseViewModel
     {
         Crud crud = new Crud();
+        Conexion conexion = new Conexion();
         private ObservableCollection<Pagos> _pagos;
         private bool _buttonVer;
         public bool buttonVer
@@ -51,11 +52,11 @@ namespace ExamenTercerParcial.ModelView
         }
 
 
-        public async void mostrar()
+        public void mostrar()
         {
             try
             {
-                var ppagosList = await crud.getReadPagos();
+                var ppagosList =  crud.SELECT_WHERE();
                 foreach (var pagos in ppagosList)
                 {
                     Pagos.Add(new Pagos

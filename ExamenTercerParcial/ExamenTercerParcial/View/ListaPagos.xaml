@@ -3,14 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ExamenTercerParcial.View"
              xmlns:pagos="clr-namespace:ExamenTercerParcial.ModelView"
-             x:Class="ExamenTercerParcial.View.ListaPagos">
+             x:Class="ExamenTercerParcial.View.ListaPagos"
+             Title="Pagos realizados">
 
     <ContentPage.Content>
         <StackLayout Margin="5">
+            <Frame HasShadow="false" Padding="30">
+                <StackLayout>
+                    <Label FontAttributes="Bold" TextColor="OrangeRed" FontSize="18" HorizontalOptions="Center" Text="FECHAS MAS RECIENTES A MAS ANTIGUAS"></Label>
+                </StackLayout>
+            </Frame>
 
-          
-
-
+         
             <ListView Margin="0"  RowHeight="200" x:Name="lista" ItemsSource="{Binding Pagos}"  SelectedItem="{Binding SelectedPago}" >
                 <ListView.ItemTemplate>
 
@@ -79,16 +83,16 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackLayout  HorizontalOptions="FillAndExpand" WidthRequest="230" Margin="20" Orientation="Horizontal">
+            <StackLayout   HorizontalOptions="Center" WidthRequest="230" Margin="20" Orientation="Horizontal">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer CommandParameter="{x:Type local:Pago}" Command="{Binding IrInformacionCommand}">
 
                     </TapGestureRecognizer>
 
                 </StackLayout.GestureRecognizers>
-                <Frame HorizontalOptions="CenterAndExpand" WidthRequest="230">
+                <Frame BorderColor="Orange" HorizontalOptions="CenterAndExpand" WidthRequest="230">
                     <StackLayout HorizontalOptions="Center"  Orientation="Horizontal">
-                        <Label HorizontalOptions="Center" FontSize="20" Text="Ver Pago"></Label>
+                        <Label HorizontalOptions="Center" TextColor="Red" FontAttributes="Bold" FontSize="20" Text="Ver Pago"></Label>
 
                     </StackLayout>
                 </Frame>

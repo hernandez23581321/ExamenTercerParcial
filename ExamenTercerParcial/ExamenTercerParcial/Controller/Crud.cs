@@ -1,4 +1,5 @@
 ﻿using ExamenTercerParcial.Model;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,11 @@ namespace ExamenTercerParcial.Controller
         public Task<List<Pagos>> getReadPagos()
         {
             return conn.GetConnectionAsync().Table<Pagos>().ToListAsync();
+           
+        }
+        public  IEnumerable<Pagos> SELECT_WHERE()
+        {
+            return conn.Conn().Query<Pagos>("SELECT * FROM Pagos order by fecha desc");
         }
 
         public Task<Pagos> getPagosId(int id)

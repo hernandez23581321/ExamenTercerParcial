@@ -93,7 +93,7 @@ namespace ExamenTercerParcial.ModelView
                 CustomPhotoSize = 50,
                 PhotoSize = PhotoSize.MaxWidthHeight,
                 MaxWidthHeight = 2000,
-                DefaultCamera = CameraDevice.Front
+                DefaultCamera = CameraDevice.Rear
             });
 
             if (file == null)
