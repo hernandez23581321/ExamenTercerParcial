@@ -102,6 +102,7 @@ namespace ExamenTercerParcial.ModelView
             else
             {
                 await App.Current.MainPage.DisplayAlert("Alerta", "Seleccione un Pago de la lista", "ok");
+                mostrar();
             }
         }
 

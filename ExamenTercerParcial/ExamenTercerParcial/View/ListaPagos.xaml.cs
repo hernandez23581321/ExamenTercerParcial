@@ -16,7 +16,7 @@ namespace ExamenTercerParcial.View
         public ListaPagos()
         {
             InitializeComponent();
-
+            OnAppearing();
         }
         protected override void OnAppearing()
         {
