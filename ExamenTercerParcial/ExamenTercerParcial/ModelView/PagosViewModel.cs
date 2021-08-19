@@ -74,6 +74,29 @@ namespace ExamenTercerParcial.ModelView
             }
         }
 
+        public ICommand FotoCommand
+        {
+            get
+            {
+                return new Command(() => Viewfoto());
+            }
+        }
+        async void Viewfoto()
+        {
+            Pagos update = new Pagos
+            {
+                idPago = Convert.ToInt32(Id.ToString()),
+                descripcion = Descripcion,
+                monto = Monto,
+                fecha = Fecha,
+                photo_recibo = Foto
+            };
+            var data = new FotoRecibo();
+            data.BindingContext = update;
+            App.Current.MainPage.Navigation.PushModalAsync(data);
+        }
+            
+
         async void TomarFoto()
         {
             await CrossMedia.Current.Initialize();

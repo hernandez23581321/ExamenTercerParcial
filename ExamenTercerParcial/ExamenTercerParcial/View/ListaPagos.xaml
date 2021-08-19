@@ -60,7 +60,8 @@
                                                     <Label.FormattedText>
                                                         <FormattedString>
                                                             <Span FontSize="16" FontAttributes="Bold" Text="Fecha: "></Span>
-                                                            <Span  FontSize="16" Text="{Binding fecha}"></Span>
+                                                            <Span   FontSize="16" Text="{Binding fecha}"></Span>
+                                                           
                                                            
                                                         </FormattedString>
                                                     </Label.FormattedText>

@@ -37,7 +37,7 @@
                     </StackLayout>
                     <StackLayout  >
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer  Command="{Binding CameraCommand}">
+                            <TapGestureRecognizer  Command="{Binding FotoCommand}">
 
                             </TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
